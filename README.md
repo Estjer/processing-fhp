@@ -1,4 +1,4 @@
-# processing-fhp
+# Processing @ FHP
 
 _A collection of sketches made for the course "Processing for designers"_
 
