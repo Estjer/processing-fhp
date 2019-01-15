@@ -3,7 +3,8 @@
 _A collection of sketches made for the course "Processing for designers"_
 
 
-##LUNGS
+__LUNGS__
+
 The sketch displays a pair of lungs that inflate and deflate
 You can make the subject start running and the lungs will breathe faster and faster
 When the person is running there will be a text display saying "YASSS EXERCISE!!"
