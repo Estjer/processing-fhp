@@ -57,6 +57,8 @@ lungs[1].leftlung(400);
 lungs[1].rightlung(400);
 }
 
+
+
 else {
 lungs[0].leftlung(faster);
 lungs[0].rightlung(faster);
@@ -71,4 +73,65 @@ if(faster < 10) {
   textSize(40);
 text(s, 80, 450);
 }
+}
+
+int radius=0;
+int length=200;
+int tempD;
+boolean deflate = true;
+int redvalue;
+//PImage img;
+
+class Lung {
+void leftlung(int tempD) {
+  redvalue = 209;
+  //PImage img = loadImage("lung texture.jpg");
+  rectMode(CENTER);
+  noStroke();
+  fill(redvalue, 126, 191);
+  //texture(img);
+  rect(width/4, height/2, length-20, length+30, 150, 6, 12, 18);
+
+  // Inflate and deflate
+  if (deflate) length--;
+  else length++;
+  delay(tempD);
+
+  // Reverse
+  if (length == 160 || length == 200) deflate = !deflate;
+}
+
+void rightlung(int tempD) {
+   redvalue = 209;
+  rectMode(CENTER);
+  noStroke();
+  //fill(#D17EBF);
+  fill(redvalue, 126, 191);
+  //PImage img = loadImage("lung texture.jpg");
+  rect(340, height/2, length-20, length+30, 6, 150, 12, 18);
+
+  // Inflate and deflate
+  if (deflate) length--;
+  else length++;
+  delay(tempD);
+
+  // Reverse
+  if (length == 160 || length == 200) deflate = !deflate;
+  
+
+}
+
+}
+class Windpipe {
+  
+  void draw(){
+ pipes();
+ }
+ 
+ void pipes(){
+ strokeWeight(30);
+stroke(199,21,133);
+line(245, 100, 245, 200);
+line(200, 220, 245, 200);
+line(300, 220, 245, 200);}
 }
