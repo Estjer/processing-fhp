@@ -12,4 +12,5 @@ The code uses the library controlp5, classes, arrays, and loops
 Not much to look at but I tried to apply all my knowledge
 
 ![Lungs project](https://github.com/Estjer/processing-fhp/blob/master/lungs.png?raw=true "Lungs")
+
 [Check out the code!](/Estjer/processing-fhp/blob/master/Lungs.pde)
