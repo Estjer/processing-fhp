@@ -1,6 +1,6 @@
 # processing-fhp
 
-##_A collection of sketches made for the course "Processing for designers"_
+_A collection of sketches made for the course "Processing for designers"_
 
 
 
