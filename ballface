@@ -1,0 +1,50 @@
+//Video Capture by Esther Roman
+//This captures a video and maps it to a sphere
+
+
+import processing.video.*;
+PShape globe;
+
+
+Capture video;
+
+void setup(){
+  smooth(2);
+  size(640, 480, P3D);
+  
+  video = new Capture(this, width, height);
+  video.start();
+ 
+  globe = createShape(SPHERE, 200); 
+  globe.setTexture(video);
+}
+
+void captureEvent(Capture video) {
+  video.read();
+}
+
+void draw(){
+  //fill(0, 0, 255);
+  noStroke();
+  translate(width/2, height/2); 
+  shape(globe);
+
+//}
+ 
+
+    
+    tint(mouseX, mouseY, 50);
+      
+  if (mousePressed) { 
+    saveFrame(); 
+  } 
+  
+
+ 
+  
+  //rect(mouseX-20, mouseY-20, mouseX, mouseY);
+    noFill();
+  stroke(255);
+  
+  }
+  
