@@ -1,0 +1,140 @@
+//DAY 6 ESTHER ROMAN
+//THE TRUTH IS OUT THERE
+//based on database by timothy renner :https://data.world/timothyrenner/bfro-sightings-data
+
+
+//Maps sasquatch sightings from a .csv file
+//Short intro screen
+//to expand for dogman and ufos
+
+import static javax.swing.JOptionPane.*;
+import processing.sound.*;
+PFont first;
+PFont second;
+String s = "CRYPTIDS";
+String s1 = "The truth is out there";
+int time;
+SoundFile file;
+PShape baseMap;
+String[] csvUFO;
+String[] csvSASQUATCH;
+String[] csvDOGMAN;
+String[][] myDataUFO ;
+String[][] myDataSASQUATCH ;
+String[][] myDataDOGMAN ;
+String[] theFile;
+int i;
+float markerSizeSASQUATCH = 5;
+float markerSizeUFO = 10;
+
+void setup() {
+  background(0);
+  size(1000, 600);
+  time = millis();
+   smooth();
+   noLoop();
+   baseMap = loadShape("WorldMap.svg");
+   introText();
+}  
+
+void draw() {
+  delay(6000);
+  shape(baseMap, 0, 0, width, height);
+  sasquatch();
+  mouseOver();
+  //dogman();
+ // UFO();
+  //<>// //<>// //<>// //<>// //<>//
+}
+
+
+void sasquatch(){
+ csvSASQUATCH = loadStrings("SASQUATCH2 backup.csv");
+      myDataSASQUATCH = new String[csvSASQUATCH.length-1][6];
+      for (int i = 0; i<csvSASQUATCH.length-1; i++){
+      //println(csvSASQUATCH[i]);
+      //println(0,csvSASQUATCH[i].substring(0,csvSASQUATCH[i].length()-2));
+      myDataSASQUATCH[i] = csvSASQUATCH[i+1].substring(0,csvSASQUATCH[i+1].length()-2).split(",");}
+
+  for (int i=0; i<myDataSASQUATCH.length; i++){
+    println(i);
+    fill(#107D9D, 50);
+    textMode(MODEL);
+    noStroke();
+    println(myDataSASQUATCH[i][5]); 
+    println(myDataSASQUATCH[i][4]);
+    float graphLong = map(float(myDataSASQUATCH[i][5]), -180, 180, 0, width);
+    float graphLat = map(float(myDataSASQUATCH[i][4]), 90, -90, 0, height);
+    println(graphLong+";"+graphLat);
+    println("before elipse");
+    ellipse(graphLong, graphLat, markerSizeSASQUATCH, markerSizeSASQUATCH);
+    println("after elipse");      
+}
+}
+
+void mouseOver(){
+       csvSASQUATCH = loadStrings("SASQUATCH2 backup.csv");
+      myDataSASQUATCH = new String[csvSASQUATCH.length-1][6];
+      for (int i = 0; i<csvSASQUATCH.length-1; i++){
+      //println(csvSASQUATCH[i]);
+      //println(0,csvSASQUATCH[i].substring(0,csvSASQUATCH[i].length()-2));
+      myDataSASQUATCH[i] = csvSASQUATCH[i+1].substring(0,csvSASQUATCH[i+1].length()-2).split(",");}
+    float graphLong = map(float(myDataSASQUATCH[i][5]), -180, 180, 0, width);
+    float graphLat = map(float(myDataSASQUATCH[i][4]), 90, -90, 0, height);
+if(dist(mouseX, mouseY, graphLong, graphLat)<60){
+   textSize(40);
+    fill(255);
+  text(myDataSASQUATCH[i][1], mouseX-20, mouseY-10);
+}
+}
+
+void introText(){
+
+  first  = createFont("georgia", 25);
+  textFont(first);
+    textSize(60);
+fill(255);
+text(s, 330, 300);
+    text(s1, 220, 400);
+     file = new SoundFile(this, "intro.mp3");
+  file.play(); }
+
+//void UFO() {
+//  csvUFO = loadStrings("UFODATA.csv");
+//  myDataUFO = new String[csvUFO.length][10];
+//  for (int i = 0; i<csvUFO.length; i++) {
+//  myDataUFO[i] = csvUFO[i].split(",");}
+  
+//  for (int i=0; i<myDataUFO.length; i++){ 
+//    fill(#9D1010, 50);
+//    textMode(MODEL);
+//    noStroke();
+//    print(myDataUFO[i].length);
+//    if(myDataUFO[i].length==10){
+//      println(myDataUFO[i][9]);
+//      println(myDataUFO[i][8]);
+//      float graphLong = map(float(myDataUFO[i][9]), -180, 180, 0, width);
+//      float graphLat = map(float(myDataUFO[i][8]), 90, -90, 0, height);
+//      println(graphLong+";"+graphLat);
+//      ellipse(graphLong, graphLat, markerSizeUFO, markerSizeUFO);
+//    }
+//}
+//}
+
+
+//void dogman(){
+
+//   csvDOGMAN = loadStrings("DOGMANDATA.csv");
+//myDataDOGMAN = new String[csvDOGMAN.length][9];
+//for (int i = 0; i<csvDOGMAN.length; i++){
+//  myDataDOGMAN[i] = csvDOGMAN[i].split(",");}
+  
+//for (int i=0; i<myDataDOGMAN.length; i++) {
+//    fill(#0DF70A, 50);
+//    noStroke();
+//    float graphLong = map(float(myDataDOGMAN[i][3]), -180, 180, 0, width);
+//    float graphLat = map(float(myDataDOGMAN[i][4]), 90, -90, 0, height);
+//   float markerSizeDOGMAN = 100;
+//    ellipse(graphLong, graphLat, markerSizeDOGMAN, markerSizeDOGMAN);
+//}
+//}
