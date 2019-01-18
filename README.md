@@ -19,6 +19,6 @@ Not much to look at but I tried to apply all my knowledge
 __BALLFACE__
 This sketch captures a video and maps it as the texture of a sphere
 
-![Ballface](https://github.com/Estjer/processing-fhp/blob/master/screen-0351.tif?raw=true "Ballface")
+![Ballface](https://github.com/Estjer/processing-fhp/blob/master/ball.png?raw=true "Ballface")
 
 [Check out the code!](/Estjer/processing-fhp/blob/master/ballface.pde)
