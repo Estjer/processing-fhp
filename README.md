@@ -29,5 +29,5 @@ __THE TRUTH IS OUT THERE__
 Maps a csv database of sasquatch sightings into a world map
 short intro that plays a clip of the X-Files theme
 ![Sasquatch](/Estjer/processing-fhp/blob/master/sasquatch.png?raw=true "Sasquatch")
-[Check out the code!](/Estjer/processing-fhp/blob/master/sasquatch.pde)
+[Check out the code!](https://github.com/Estjer/processing-fhp/blob/master/sasquatch.pde)
 
